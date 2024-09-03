@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <UnityVersion>2022.3.42</UnityVersion>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <SPZ2ManagedPath>$(STEAMAPPS)shapez 2/shapez 2_Data/Managed/</SPZ2ManagedPath>
+  </PropertyGroup>
+
+  <ItemGroup Label="References">
+    <Reference Include="$(SPZ2ManagedPath)MainMenuAssembly.dll"/>
+    <Reference Include="$(SPZ2ManagedPath)SPZGameAssembly.dll"/>
+    <Reference Include="$(SPZ2ManagedPath)Core.dll"/>
+    <Reference Include="$(SPZ2ManagedPath)Unity.Core.dll"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Utils.fs" />
+    <Compile Include="WiresSimulationFixPlugin.fs" />
+  </ItemGroup>
+
+  <Import Project="../Common.FS.props" />
+  <Import Project="../Common.FS.targets" />
+  <Import Project="../PluginInfoProps.FS.props" />
+</Project>
