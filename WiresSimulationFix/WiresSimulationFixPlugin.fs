@@ -1,19 +1,19 @@
-﻿namespace WiresSimluationFix
+﻿namespace WiresSimulationFix
 
 open BepInEx
 open HarmonyLib
 open BepInEx.Logging
 open Utils.Operators
 
-module WiresSimluationFix =
+module WiresSimulationFix =
     let mutable internal Plugin: BaseUnityPlugin option = None
     let mutable internal Logger: ManualLogSource option = None
     let mutable internal Patcher: Harmony option = None
     
-open WiresSimluationFix
+open WiresSimulationFix
 
 [<BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)>]
-type WiresSimluationFixPlugin() =
+type WiresSimulationFixFixPlugin() =
     inherit BaseUnityPlugin()
     
     member this.Awake() =

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WiresSimluationFix", "WiresSimluationFix\WiresSimluationFix.fsproj", "{C8C296C9-089F-49E0-88A9-EFA82A7E9826}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WiresSimulationFix", "WiresSimulationFix\WiresSimulationFix.fsproj", "{C8C296C9-089F-49E0-88A9-EFA82A7E9826}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

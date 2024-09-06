@@ -6,8 +6,8 @@ repository = "https://thunderstore.io"
 
 [package]
 namespace = "www_Day_Dream"
-name = "SkipIntro"
-description = "Skips the preloading and intro scenes to go straight to the main menu."
+name = "WiresSimulationFix"
+description = "Removes the LOD factor on the `requiredDeltaTicks` inside the SimulationGraph::Update."
 containsNsfwContent = false
 [package.dependencies]
 BepInEx-BepInExPack = "5.4.2100"
@@ -21,14 +21,14 @@ outdir = "../dist"
 source = "../CHANGELOG.md"
 target = "/"
 [[build.copy]]
-source = "../SkipIntro/bin/Release/netstandard2.1/wwwDayDream.SkipIntro.dll"
-target = "/BepInEx/plugins/SkipIntro/"
+source = "../WiresSimulationFix/bin/Release/netstandard2.1/wwwDayDream.WiresSimulationFix.dll"
+target = "/BepInEx/plugins/WiresSimulationFix/"
 [[build.copy]]
-source = "../SkipIntro/bin/Release/netstandard2.1/FSharp.Core.dll"
+source = "../WiresSimulationFix/bin/Release/netstandard2.1/FSharp.Core.dll"
 target = "/BepInEx/core/"
 [[build.copy]]
 source = "../LICENSE"
-target = "/BepInEx/plugins/SkipIntro/"
+target = "/BepInEx/plugins/WiresSimulationFix/"
 
 [publish]
 communities = [ "shapez-2" ]
