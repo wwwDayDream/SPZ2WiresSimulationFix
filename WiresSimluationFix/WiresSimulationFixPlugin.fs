@@ -22,13 +22,15 @@ type WiresSimluationFixPlugin() =
         Patcher <- Harmony(this.Info.Metadata.GUID) |> Some
         
         Patcher |??> (_.PatchAll()) |>- ()
+
+        let methods = Patcher |??> (_.GetPatchedMethods()) |??> List.ofSeq
+        if methods.IsSome && Logger.IsSome then
+            $"Patched {methods.Value.Length} method{(if methods.Value.Length = 1 then ' ' else 's')}" |> Logger.Value.LogInfo
         
 [<HarmonyPatch(typeof<SimulationGraph>)>]
 module SimulationGraphPatcher =
-    [<HarmonyPatch(".ctor")>] [<HarmonyPostfix>]
-    let PrepareStartOptionsOverride (__instance: SimulationGraph) =
-        __instance.MaxDeltaTicks |> Logger.Value.LogInfo
-        Traverse.Create(__instance).Field<int>("MaxDeltaTicks").Value <- 1
-        
+    [<HarmonyPatch("<Update>g__UpdateCluster|29_1")>] [<HarmonyPrefix>]
+    let PrepareStartOptionsOverride (requiredDeltaTicks: int byref, __instance: SimulationGraph) =
+        requiredDeltaTicks <- 0
         ()
         
