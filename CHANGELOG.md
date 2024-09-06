@@ -7,12 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
-- License & Readme
-
 ## [0.0.1]
 
 ### Added
-
-- Basic intro skipping functionality
-- Loading clean map scene
+- Initial setup which removes the LOD factor on the requiredDeltaTicks inside the SimulationGraph::Update.
